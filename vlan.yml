@@ -2,7 +2,6 @@
 - name: to vlan
   hosts: SW1-Nhut
   gather_facts: no
-  
   tasks:
    - name: Create vlan
       ios_vlan: "{{ item.number }}"
@@ -16,5 +15,4 @@
        commands:
          - show vlan brief
        register: show_vlan
-
    - debug: var=show_vlan.stdout_lines
