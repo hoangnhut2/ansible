@@ -12,8 +12,8 @@
       - { number: "33", name: "phong_nhan_su" }
       - { number: "34", name: "phong_ke_toan" }
    - name: Show vlan
-      ios_command:
-       commands:
-        - show vlan brief
-       register: show_vlan
+     ios_command:
+      commands:
+       - show vlan brief
+      register: show_vlan
    - debug: var=show_vlan.stdout_lines
