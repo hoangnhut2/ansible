@@ -1,1 +1,18 @@
-
+---
+- name: dat ip cho loopback
+  hosts: R1-Nhut
+  tasks:
+   - name: Set loopback IPv4 address
+     ios_l3_interface:
+      name: loopback 2
+      ipv4: 10.0.0.1/24
+   - name: Set Ethernet0/1 ipv4 address
+     ios_l3_interface:
+      name: Ethernet0/1
+      ipv4: 192.168.0.1/24
+   - name: show ip
+     ios_command:
+      commands:
+       - show ip int brief
+     register: show_ip
+   - debug: var=show_vlan.stdout_lines
