@@ -15,5 +15,5 @@
      ios_command:
       commands:
        - show vlan brief
-      register: show_vlan
+     register: show_vlan
    - debug: var=show_vlan.stdout_lines
